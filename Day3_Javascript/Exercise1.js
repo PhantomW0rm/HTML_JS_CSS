@@ -1,18 +1,31 @@
-<!DOCTYPE html>
+'use strict'
 
-<html>
+let animal = new Object();
+console.log(typeof(animal));
 
-    <head>
-        <title></title>
-    </head>
+animal["name"] = "clifford";
+animal["type"] = "dog";
+animal["size"] = "big";
 
-    <body>
+console.log(animal);
 
-        <p></p>
+animal.colour = "red";
 
-    </body>
+console.log(animal);
 
+let vehicle = {
+    "type" : "bike",
+    "seats" : 1,
+    "wheels" : 2
+}
 
+console.log(typeof(vehicle));
+console.log(vehicle);
 
+let garage = [
+    vehicle,
+    {"type" : "car", "seats" : 5, "wheels" : 4}
+]
 
-</html>
+console.log(typeof(garage));
+console.log(garage);
