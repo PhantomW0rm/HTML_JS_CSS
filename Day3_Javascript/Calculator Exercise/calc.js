@@ -7,6 +7,12 @@ DOM.btnSub.onclick = () => subtract(DOM.inputOne.value, DOM.inputTwo.value);
 DOM.btnDiv.onclick = () => divide(DOM.inputOne.value, DOM.inputTwo.value);
 DOM.btnMult.onclick = () => times(DOM.inputOne.value, DOM.inputTwo.value);
 DOM.btnClear.onclick = () => Clear();
+DOM.btnEql.onclick = () => equals();
+let answer = 0;
+
+let calculation = {
+
+}
 
 // Declare my functions
 // Addition
@@ -15,7 +21,12 @@ function add (num1, num2)
     let operation = "+";
     let answer = 0;
     answer = +num1 + +num2;
-    displist(num1, num2, operation, answer);
+    calculation = {
+        num1 : num1,
+        num2 : num2,
+        operation : operation,
+        answer : answer
+        };
 }
 
 // Subtract
@@ -58,4 +69,11 @@ function Clear()
     DOM.inputOne.value = "";
     DOM.inputTwo.value = "";
     document.getElementById("list_output").innerHTML = "";
+}
+
+// Equals
+
+function equals()
+{
+    displist(calculation.num1, calculation.num2, calculation.operation, calculation.answer);
 }
